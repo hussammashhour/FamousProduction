@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    body {
+        @apply font-sans;
+        line-height: 1.6;
+        color: theme('colors.secondary.500');
+        background-color: theme('colors.primary.50');
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading;
+        font-weight: 600;
+        line-height: 1.2;
+        color: theme('colors.primary.500');
+    }
+
+    /* Typography Scale */
+    h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+    h2 { @apply text-3xl md:text-4xl lg:text-5xl; }
+    h3 { @apply text-2xl md:text-3xl lg:text-4xl; }
+    h4 { @apply text-xl md:text-2xl lg:text-3xl; }
+    h5 { @apply text-lg md:text-xl lg:text-2xl; }
+    h6 { @apply text-base md:text-lg lg:text-xl; }
+
+    /* Focus Styles */
+    *:focus {
+        outline: 2px solid theme('colors.primary.200');
+        outline-offset: 2px;
+    }
+
+    /* Selection */
+    ::selection {
+        background-color: theme('colors.primary.100');
+        color: theme('colors.primary.500');
+    }
+}
+
+/* Component Styles */
+@layer components {
+    /* Button Variants */
+    .btn {
+        @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-primary {
+        @apply btn bg-primary-400 text-white hover:bg-primary-500 focus:ring-primary-200 shadow-soft hover:shadow-medium;
+    }
+
+    .btn-secondary {
+        @apply btn bg-secondary-100 text-secondary-500 hover:bg-secondary-200 focus:ring-secondary-200 border border-secondary-200;
+    }
+
+    .btn-outline {
+        @apply btn border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white focus:ring-primary-200;
+    }
+
+    .btn-ghost {
+        @apply btn text-secondary-400 hover:bg-secondary-100 focus:ring-secondary-200;
+    }
+
+    .btn-danger {
+        @apply btn bg-error-500 text-white hover:bg-error-600 focus:ring-error-200;
+    }
+
+    .btn-success {
+        @apply btn bg-success-500 text-white hover:bg-success-600 focus:ring-success-200;
+    }
+
+    /* Button Sizes */
+    .btn-sm { @apply px-3 py-1.5 text-xs; }
+    .btn-lg { @apply px-6 py-3 text-base; }
+    .btn-xl { @apply px-8 py-4 text-lg; }
+
+    /* Card Component */
+    .card {
+        @apply bg-white rounded-xl shadow-soft border border-secondary-100 overflow-hidden;
+    }
+
+    .card-header {
+        @apply px-6 py-4 border-b border-secondary-100 bg-secondary-50;
+    }
+
+    .card-body {
+        @apply p-6;
+    }
+
+    .card-footer {
+        @apply px-6 py-4 border-t border-secondary-100 bg-secondary-50;
+    }
+
+    /* Form Components */
+    .form-input {
+        @apply w-full px-3 py-2 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-200 transition-colors duration-200;
+    }
+
+    .form-label {
+        @apply block text-sm font-medium text-secondary-500 mb-2;
+    }
+
+    .form-error {
+        @apply text-sm text-error-500 mt-1;
+    }
+
+    .form-help {
+        @apply text-sm text-secondary-400 mt-1;
+    }
+
+    /* Badge Component */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-primary {
+        @apply badge bg-primary-100 text-primary-500;
+    }
+
+    .badge-secondary {
+        @apply badge bg-secondary-100 text-secondary-500;
+    }
+
+    .badge-success {
+        @apply badge bg-success-100 text-success-600;
+    }
+
+    .badge-warning {
+        @apply badge bg-warning-100 text-warning-600;
+    }
+
+    .badge-error {
+        @apply badge bg-error-100 text-error-600;
+    }
+
+    /* Alert Component */
+    .alert {
+        @apply p-4 rounded-lg border-l-4;
+    }
+
+    .alert-info {
+        @apply alert bg-info-50 border-info-200 text-info-300;
+    }
+
+    .alert-success {
+        @apply alert bg-success-50 border-success-200 text-success-600;
+    }
+
+    .alert-warning {
+        @apply alert bg-warning-50 border-warning-200 text-warning-600;
+    }
+
+    .alert-error {
+        @apply alert bg-error-50 border-error-200 text-error-600;
+    }
+
+    /* Container */
+    .container-responsive {
+        @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Section */
+    .section {
+        @apply py-12 md:py-16 lg:py-20;
+    }
+
+    /* Grid System */
+    .grid-responsive {
+        @apply grid gap-6 md:gap-8 lg:gap-10;
+    }
+
+    /* Text Utilities */
+    .text-gradient {
+        @apply bg-gradient-to-r from-primary-400 to-accent-100 bg-clip-text text-transparent;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Utility Classes */
+@layer utilities {
+    /* Responsive Text */
+    .text-responsive-xs { @apply text-xs sm:text-sm; }
+    .text-responsive-sm { @apply text-sm sm:text-base; }
+    .text-responsive-base { @apply text-base sm:text-lg; }
+    .text-responsive-lg { @apply text-lg sm:text-xl; }
+    .text-responsive-xl { @apply text-xl sm:text-2xl; }
+    .text-responsive-2xl { @apply text-2xl sm:text-3xl; }
+    .text-responsive-3xl { @apply text-3xl sm:text-4xl; }
+
+    /* Responsive Spacing */
+    .space-responsive { @apply space-y-4 sm:space-y-6 md:space-y-8; }
+    .gap-responsive { @apply gap-4 sm:gap-6 md:gap-8; }
+
+    /* Aspect Ratios */
+    .aspect-video { aspect-ratio: 16 / 9; }
+    .aspect-square { aspect-ratio: 1 / 1; }
+    .aspect-photo { aspect-ratio: 4 / 3; }
+
+    /* Glass Effect */
+    .glass {
+        @apply bg-white/80 backdrop-blur-sm border border-white/20;
+    }
+
+    /* Gradient Backgrounds */
+    .bg-gradient-primary {
+        @apply bg-gradient-to-br from-primary-100 to-primary-400;
+    }
+
+    .bg-gradient-secondary {
+        @apply bg-gradient-to-br from-secondary-100 to-secondary-400;
+    }
+
+    .bg-gradient-accent {
+        @apply bg-gradient-to-br from-accent-50 to-accent-100;
+    }
+
+    /* Hover Effects */
+    .hover-lift {
+        @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-medium;
+    }
+
+    .hover-scale {
+        @apply transition-transform duration-300 hover:scale-105;
+    }
+
+    /* Animation Delays */
+    .animate-delay-100 { animation-delay: 100ms; }
+    .animate-delay-200 { animation-delay: 200ms; }
+    .animate-delay-300 { animation-delay: 300ms; }
+    .animate-delay-400 { animation-delay: 400ms; }
+    .animate-delay-500 { animation-delay: 500ms; }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .dark-mode-auto {
+        @apply dark:bg-primary-700 dark:text-primary-100;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .no-print { display: none !important; }
+    .print-break { page-break-before: always; }
+}

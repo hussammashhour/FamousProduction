@@ -1,0 +1,10 @@
+php artisan make:model User
+php artisan make:request StoreUserRequest
+php artisan make:resource UserResource
+php artisan make:resource UserCollection
+php artisan make:middleware EnsureUserRole
+
+
+
+php artisan optimize:clear
+php artisan filament:cache-components

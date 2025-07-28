@@ -1,0 +1,87 @@
+
+## User-Facing Sitemap
+
+### 1. Public Pages (Accessible to all visitors)
+- **Home** (`/`)
+- **About** (`/about`)
+- **Contact** (`/contact`)
+- **Services** (`/services`)
+  - Service Details (`/services/{service}`)
+- **Portfolio/Posts** (`/posts`)
+  - Post Details (`/posts/{post}`)
+    - Comments
+    - Photos
+    - Likes
+- **Announcements** (`/announcements`)
+  - Announcement Details (`/announcements/{announcement}`)
+- **FAQs** (`/faqs`)
+- **Reviews** (`/reviews`)
+- **Tags** (`/tags/{tag}`) (if public tagging is used)
+- **Login** (`/login`)
+- **Register** (`/register`)
+- **Forgot Password** (`/forgot-password`)
+- **Email Verification** (`/verify-email`)
+
+---
+
+### 2. Authenticated User Area (After Login)
+- **Dashboard** (`/dashboard`)
+- **Profile** (`/profile`)
+  - Edit Profile
+  - Change Password
+- **My Bookings** (`/bookings`)
+  - Booking Details (`/bookings/{booking}`)
+  - Make a Booking (`/services/{service}/book`)
+- **My Payments** (`/payments`)
+- **My Messages** (`/messages`)
+- **My Support Tickets** (`/support-tickets`)
+  - Ticket Details (`/support-tickets/{ticket}`)
+  - Create Ticket
+
+---
+
+## Indented Visual Sitemap
+
+```
+/
+├── about
+├── contact
+├── services
+│   └── {service}
+│       └── book (if booking is public)
+├── posts
+│   └── {post}
+│       ├── comments
+│       ├── photos
+│       └── likes
+├── announcements
+│   └── {announcement}
+├── faqs
+├── reviews
+├── tags
+│   └── {tag}
+├── login
+├── register
+├── forgot-password
+├── verify-email
+├── dashboard
+│   ├── profile
+│   ├── bookings
+│   │   └── {booking}
+│   ├── payments
+│   ├── messages
+│   └── support-tickets
+│       └── {ticket}
+│           └── replies
+```
+
+---
+
+## Notes
+
+- **Booking**: Users can view, create, and manage their bookings.
+- **Support Tickets**: Users can create and track support tickets and replies.
+- **Profile**: Users can update their info and password.
+- **Posts/Portfolio**: Users can browse posts, view details, and interact (like, comment).
+- **Services**: Users can browse and book services.
+- **Announcements, FAQs, Reviews**: Informational, possibly with user interaction (e.g., submitting reviews).
